@@ -1,0 +1,52 @@
+<div class="settings-page">
+
+  <div class="row">
+    <h2 class="center-align">New Picture</h2>
+    <app-list-errors [errors]="errors"></app-list-errors>
+    <form class="col s12" [formGroup]="pictureForm" (ngSubmit)="submitForm()">
+      <fieldset class="card-panel" [disabled]="isSubmitting">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="title" type="text" class="validate" formControlName="title">
+            <label for="title">Picture Title</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="description" type="text" class="validate" formControlName="description">
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="image" type="text" class="validate" formControlName="image">
+            <label for="image">Image URL</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="tags"
+                   class="validate"
+                   type="text"
+                   [formControl]="tagField"
+                   (keyup.enter)="addTag()" />
+            <label for="tags">Enter tags</label>
+            <div class="tag-list">
+                <span *ngFor="let tag of picture.tagList"
+                      class="tag-default tag-pill">
+                  <i class="material-icons" (click)="removeTag(tag)"></i>
+                  {{ tag }}
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class="center-align">
+          <button class="btn waves-effect waves-light cyan darken-2" type="submit" name="action" [disabled]="!pictureForm.valid">
+            Publish
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+</div>

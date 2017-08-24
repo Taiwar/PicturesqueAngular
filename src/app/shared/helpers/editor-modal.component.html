@@ -1,0 +1,48 @@
+<div id="editor-modal" class="modal bottom-sheet" [hidden]="!canModify" materialize="modal">
+
+  <div class="modal-content row">
+    <app-list-errors [errors]="errors"></app-list-errors>
+    <form materialize class="col s12" [formGroup]="pictureForm" (ngSubmit)="submitForm()">
+      <fieldset class="card-panel" [disabled]="isSubmitting">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="title" type="text" class="validate" formControlName="title">
+            <label for="title">Picture Title</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="description" type="text" class="validate" formControlName="description">
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="image" type="text" class="validate" formControlName="image">
+            <label for="image">Image URL</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="tags"
+                   class="validate"
+                   type="text"
+                   [formControl]="tagField"
+                   (keyup.enter)="addTag()" />
+            <label for="tags">Enter tags</label>
+            <div class="tag-list">
+                <div class="chip" *ngFor="let tag of picture.tagList">
+                  <span>{{ tag }}</span>
+                  <i class="close material-icons" (click)="removeTag(tag)">close</i>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="center-align">
+            <button id="updateButton" class="btn waves-effect waves-light cyan darken-2" type="submit" name="action" [disabled]="!pictureForm.valid">
+              Update
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+</div>

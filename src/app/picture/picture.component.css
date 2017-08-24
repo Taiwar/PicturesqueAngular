@@ -1,0 +1,9 @@
+.card .card-image {
+  max-height: 550px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card .card-image img {
+
+}

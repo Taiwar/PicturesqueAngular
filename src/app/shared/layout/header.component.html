@@ -1,0 +1,62 @@
+<nav class="indigo">
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand-logo center">Picturesque</a>
+
+    <ul id="slide-out" class="side-nav">
+      <li *appShowAuthed="true">
+        <ul>
+          <li>
+            <div class="user-view">
+              <div class="background">
+                <img class="responsive-img" src="https://apod.nasa.gov/apod/image/1708/Carina_Foucher_2695.jpg">
+              </div>
+              <a><span class="white-text name">{{ user.username }}</span></a>
+              <a><span class="white-text email">{{ user.email }}</span></a>
+            </div>
+          </li>
+          <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              <i class="material-icons">home</i>Home
+            </a>
+          </li>
+          <li>
+            <a routerLink="/editor" routerLinkActive="active">
+              <i class="material-icons">file_upload</i>Upload
+            </a>
+          </li>
+          <li>
+            <a routerLink="/settings"
+               routerLinkActive="active">
+              <i class="material-icons">settings</i>Settings
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li *appShowAuthed="false">
+        <ul>
+          <li>
+            <div class="user-view">
+              <div class="background">
+                <img class="responsive-img" src="https://apod.nasa.gov/apod/image/1708/Carina_Foucher_2695.jpg">
+              </div>
+              <a><span class="white-text name">Picturesque</span></a>
+            </div>
+          </li>
+          <li>
+            <a routerLink="/login" routerLinkActive="active">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a routerLink="/register" routerLinkActive="active">
+              Sign up
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+
+  </div>
+</nav>

@@ -1,0 +1,52 @@
+<div class="settings-page container">
+
+  <div class="row">
+    <h1 class="center-align">Settings</h1>
+    <app-list-errors [errors]="errors"></app-list-errors>
+    <form class="col s12" [formGroup]="settingsForm" (ngSubmit)="submitForm()">
+      <fieldset class="card-panel" [disabled]="isSubmitting">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="username" type="text" class="validate" formControlName="username">
+            <label for="username">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" formControlName="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate" formControlName="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="center-align">
+          <button class="btn waves-effect waves-light cyan darken-2" type="submit" name="action" [disabled]="!settingsForm.valid">
+            Update
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col md4 offset-m1">
+      <div class="card-panel center-align">
+        <button class="btn waves-effect waves-light cyan darken-2" (click)="updateLocalPics()">
+          Scan Local Pictures
+        </button>
+      </div>
+    </div>
+    <div class="col md4 offset-m5">
+      <div class="card-panel center-align">
+        <button class="btn waves-effect waves-light cyan darken-2" (click)="logout()">
+          Log out
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

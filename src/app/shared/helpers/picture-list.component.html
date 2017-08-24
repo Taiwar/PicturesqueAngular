@@ -1,0 +1,28 @@
+<app-picture-preview
+  *ngFor="let picture of results"
+  [picture]="picture">
+</app-picture-preview>
+
+<div class="picture-preview"
+     [hidden]="!loading">
+  Loading pictures...
+</div>
+
+<div class="picture-preview"
+     [hidden]="loading || results.length">
+  No pictures are here... yet.
+</div>
+
+<!--
+<nav [hidden]="loading || totalPages <= 1">
+  <ul class="pagination">
+
+    <li class="waves-effect" [ngClass]="{'active': pageNumber === currentPage}" *ngFor="let pageNumber of totalPages" (click)="setPageTo(pageNumber)">
+
+      <a href="#">{{ pageNumber }}</a>
+
+    </li>
+
+  </ul>
+</nav>
+-->

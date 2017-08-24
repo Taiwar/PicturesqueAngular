@@ -1,0 +1,18 @@
+<div class="picture-preview col m12 hoverable">
+  <div class="card">
+    <a [routerLink]="['/picture', picture.slug]">
+      <div class="card-image">
+        <img class="responsive-img" src="{{ picture.image }}">
+        <span class="card-title">{{ picture.title }}</span>
+      </div>
+      <div class="card-content" *ngIf="picture.tagList == null">
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline"
+              *ngFor="let tag of picture.tagList">
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
+    </a>
+  </div>
+</div>
