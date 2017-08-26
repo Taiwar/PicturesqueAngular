@@ -58,7 +58,7 @@ export class EditorComponent implements OnInit {
 
   addTag() {
     // retrieve tag control
-    const tag = this.tagField.value;
+    const tag = this.tagField.value.slice(0, -1);
     // only add tag if it does not exist yet
     if (this.picture.tagList.indexOf(tag) < 0) {
       this.picture.tagList.push(tag);
