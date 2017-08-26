@@ -2,14 +2,13 @@ import { Injectable, } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { Picture, PicturesService, UserService } from '../shared';
+import { Picture, PicturesService } from '../shared';
 
 @Injectable()
 export class PictureResolver implements Resolve<Picture> {
   constructor(
     private picturesService: PicturesService,
     private router: Router,
-    private userService: UserService
   ) {}
 
   resolve(
