@@ -8,7 +8,7 @@ app-root {
   width: 99.5% !important;
 }
 
-app-home-page, app-auth-page {
+app-home-page, app-auth-page, app-editor-page {
   flex: 1 0 auto !important;
 }
 
