@@ -9,7 +9,8 @@ app-home-page, app-auth-page {
 }
 
 .row .picture-preview {
-  padding: 0.10rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .picture-preview .card {

@@ -24,7 +24,7 @@
                    class="validate"
                    type="text"
                    [formControl]="tagField"
-                   (keyup.enter)="addTag()" />
+                   (keyup.space)="addTag()" />
             <label for="tags">Enter tags</label>
             <div class="tag-list">
                 <div class="chip" *ngFor="let tag of picture.tagList">
