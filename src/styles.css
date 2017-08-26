@@ -4,13 +4,17 @@ app-root {
   flex-direction: column !important;
 }
 
+.home-page {
+  width: 99.5% !important;
+}
+
 app-home-page, app-auth-page {
   flex: 1 0 auto !important;
 }
 
 .row .picture-preview {
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0.25rem !important;
+  margin: 0.25rem !important;
 }
 
 .picture-preview .card {
