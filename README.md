@@ -1,6 +1,6 @@
 # PicturesqueAngular
 
-The Angular/Typescript backend for Picturesque
+The Angular/Typescript frontend for Picturesque
 
 ### Running PicturesqueAngular
 
