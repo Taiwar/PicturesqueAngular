@@ -1,13 +1,13 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-import { toast, MaterializeAction } from 'angular2-materialize';
+import { toast } from 'angular2-materialize';
 
 import { User, UserService } from '../shared';
-import { PicturesService } from '../shared/services/pictures.service';
+import { PicturesService } from '../shared/services';
 
 @Component({
   selector: 'app-settings-page',

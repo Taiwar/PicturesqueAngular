@@ -23,7 +23,6 @@ const pictureRouting: ModuleWithProviders = RouterModule.forChild([
   declarations: [
     PictureComponent,
   ],
-
   providers: [
     PictureResolver
   ]
